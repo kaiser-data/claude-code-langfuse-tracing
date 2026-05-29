@@ -1,0 +1,17 @@
+{
+  "_comment": "Copy this to <your-project>/.claude/settings.local.json (gitignored) to opt the project into Langfuse tracing. Claude Code injects this 'env' block into the environment of every hook, which is how the Stop hook receives these values. The SECRET key is intentionally NOT here — the wrapper pulls it from the macOS Keychain at runtime. Remove the _comment keys before use (JSON has no comments).",
+
+  "env": {
+    "_comment_optin": "Hard gate. Must be exactly the string \"true\" or the hook is a silent no-op.",
+    "TRACE_TO_LANGFUSE": "true",
+
+    "_comment_public": "Your Langfuse PUBLIC key (pk-lf-...). Safe to keep in this gitignored file.",
+    "LANGFUSE_PUBLIC_KEY": "pk-lf-xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+
+    "_comment_host": "Full base URL of your Langfuse instance. EU cloud: https://cloud.langfuse.com | US cloud: https://us.cloud.langfuse.com | self-hosted: http://localhost:3000 (or your host). Defaults to EU cloud if omitted.",
+    "LANGFUSE_BASE_URL": "https://cloud.langfuse.com",
+
+    "_comment_optional": "Optional tuning. CC_LANGFUSE_DEBUG=true writes verbose logs to ~/.claude/state/langfuse_hook.log. CC_LANGFUSE_MAX_CHARS caps per-field text length (default 20000).",
+    "CC_LANGFUSE_DEBUG": "false"
+  }
+}

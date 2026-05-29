@@ -1,0 +1,24 @@
+# Local, per-project opt-in config — contains your public key + opt-in flag.
+# Never commit; this is the file you drop into a project's .claude/ directory.
+.claude/settings.local.json
+settings.local.json
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+
+# macOS
+.DS_Store
+
+# Editor
+.idea/
+.vscode/
+*.swp
+
+# Hook runtime artifacts (only relevant if you ever run/test inside the repo)
+*.log
+langfuse_state.json
+langfuse_state.lock

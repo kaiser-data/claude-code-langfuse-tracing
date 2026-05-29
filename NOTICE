@@ -1,0 +1,25 @@
+claude-code-langfuse-tracing
+=============================
+
+This project bundles software from third parties.
+
+--------------------------------------------------------------------------------
+hooks/langfuse_hook.py
+--------------------------------------------------------------------------------
+This file is the official Claude Code -> Langfuse hook authored by the Langfuse
+team and vendored here UNMODIFIED so it can be diffed against upstream.
+
+  Source:  https://github.com/langfuse/langfuse-docs
+  Path:    content/integrations/other/claude-code.mdx
+  License: MIT
+  Copyright (c) Langfuse / Finto Technologies GmbH
+
+All credit for the hook's transcript-parsing and Langfuse-emit logic goes to the
+Langfuse team. This project is a community convenience wrapper around it and is
+not affiliated with or endorsed by Langfuse or Anthropic.
+
+--------------------------------------------------------------------------------
+Everything else
+--------------------------------------------------------------------------------
+hooks/langfuse_hook_wrapper.sh, scripts/, docs/, examples/, README.md and this
+NOTICE are original to this repository and are MIT-licensed. See LICENSE.
