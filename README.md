@@ -118,7 +118,7 @@ projects you opt in.
 
 ```bash
 # 1. Clone
-git clone https://github.com/<you>/claude-code-langfuse-tracing.git
+git clone https://github.com/kaiser-data/claude-code-langfuse-tracing.git
 cd claude-code-langfuse-tracing
 
 # 2. Run the installer — creates an isolated venv, copies the hook + wrapper,
