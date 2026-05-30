@@ -21,7 +21,20 @@ session-grouped timeline.
 
 ---
 
-## 💡 The idea behind it
+> **Attribution up front:** the hook itself — the idea *and* the code in
+> [`hooks/langfuse_hook.py`](hooks/langfuse_hook.py) — is **from the Langfuse team**,
+> published in their official Claude Code integration guide
+> ([langfuse-docs](https://github.com/langfuse/langfuse-docs/blob/main/content/integrations/other/claude-code.mdx)).
+> It's vendored here **unmodified** (MIT). All credit for the approach goes to Langfuse.
+>
+> **What *this* repo adds** is only the packaging around it: a macOS-Keychain wrapper so
+> the secret never hits disk, an installer that merges into `~/.claude/settings.json`
+> without clobbering it, per-project opt-in via `settings.local.json`, and the docs.
+> Not affiliated with or endorsed by Langfuse or Anthropic.
+
+---
+
+## 💡 The idea behind it (Langfuse's, not mine)
 
 Coding agents have become a black box. You fire off a task, watch a wall of output
 scroll by, and at the end you have *a result* — but no durable record of **how** the
@@ -33,12 +46,16 @@ But it isn't actually gone. **Claude Code already writes a complete, structured 
 transcript of every session to disk.** The data exists — it's just trapped in files
 nobody reads.
 
-This project's bet: *don't instrument the agent, instrument the trail it leaves behind.*
-A single **`Stop` hook** fires after each response, reads the new lines of that
-transcript, reconstructs them into turns, and replays them into Langfuse as proper
-traces — generations with nested tool spans, backdated to the moment they really
-happened. The result is the exact observability you'd get from wrapping every LLM call
-in an SDK… **with zero SDK, zero proxy, and zero risk to your request path.**
+**Langfuse's bet** (their docs, their hook): *don't instrument the agent, instrument
+the trail it leaves behind.* A single **`Stop` hook** fires after each response, reads
+the new lines of that transcript, reconstructs them into turns, and replays them into
+Langfuse as proper traces — generations with nested tool spans, backdated to the moment
+they really happened. The result is the exact observability you'd get from wrapping
+every LLM call in an SDK… **with zero SDK, zero proxy, and zero risk to your request
+path.**
+
+This repo just makes that hook safe and easy to run across multiple projects without
+leaving the secret in a plaintext config file.
 
 ## 🦾 Why this is a strong addon
 
