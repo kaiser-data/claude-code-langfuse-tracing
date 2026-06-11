@@ -185,6 +185,7 @@ The wrapper script (`hooks/langfuse_hook_wrapper.sh`) only touches the Keychain 
 - **[docs/how-it-works.md](docs/how-it-works.md)** — the architecture: the Stop hook contract, incremental transcript reading, turn assembly, and how spans are backdated to real timestamps.
 - **[docs/managing.md](docs/managing.md)** — install/uninstall, multi-project, key rotation, debug logging, log/state files, the SDK-pin gotcha, Linux adaptation, troubleshooting.
 - **[docs/possibilities.md](docs/possibilities.md)** — extensions: scoring/evals on dev sessions, cost dashboards, model comparison, tracing your *other* apps, building datasets, team setups.
+- **[docs/self-hosting.md](docs/self-hosting.md)** — prepared migration off Langfuse Cloud: Pi vs VPS sizing, the Docker stack, Tailscale access, and the three-value cutover.
 
 ---
 
